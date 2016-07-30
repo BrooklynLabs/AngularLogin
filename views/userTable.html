@@ -1,0 +1,53 @@
+<div class="panel panel-default" ng-show="list" >
+	<div class="panel-heading" style="background-color: rgba(61, 72, 82, 0.16);">
+		<div class="row">
+			<div class="col-sm-12 ">
+				<div class=" col-sm-2" style="">
+					
+					<select class="form-control" ng-model="selectInput" id="sel1" ng-options="item.id as item.label for item in items"
+					 style="border-radius: 10px;">
+					</select>
+				</div>
+				<div class=" col-sm-2">
+					<input class="form-control" type="text" placeholder="Search" ng-model="inputText[selectInput]" 
+					style="border-radius: 10px;">
+				</div>
+				<div class="pull-right">
+					<span ng-click="editUser()" class="glyphicon glyphicon-pencil edit"></span>
+					<span ng-click="deleteUsers()" class="glyphicon glyphicon-trash delete"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="">
+		<table class="table table-striped table-bordered" style="margin-bottom:0px">
+			<thead class="well well-sm">
+				<tr class="well well-sm">
+					<th></th>
+					<th>Full Name</th>
+					<th>employee Number</th>
+					<th>Location</th>
+					<th>Phone Number</th>
+					<th>Email address</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr dir-paginate="x in list|orderBy:sortKey:reverse|filter:inputText|itemsPerPage:5">
+					<td><input type="checkbox" ng-model="x.checkbox" class="checkbox" ></td>
+					<td>{{x.fullname}}</td>
+					<td>{{x.empno}}</td>
+					<td>{{x.location}}</td>
+					<td>{{x.phonenumber}}</td>
+					<td>{{x.email}}</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="pull-right">
+			 <dir-pagination-controls
+       max-size="5"
+       direction-links="true"
+       boundary-links="true" >
+    </dir-pagination-controls>
+		</div>
+	</div>
+</div>

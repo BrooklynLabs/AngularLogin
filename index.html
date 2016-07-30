@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="ISO-8859-1">
+<title>Predix UI Demo</title>
+<link rel="stylesheet" href="js/lib/bootstrap.min.css">
+<style>
+body {
+	background-color: rgba(61, 72, 82, 0.16);
+}
+
+.home {
+	margin-top: 10%;
+}
+.home-sub input{
+	    background-color: rgba(128, 128, 128, 0.06);
+}
+.home input {
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, .39), 0 -1px 1px #FFF, 0 1px 0 #FFF;
+}
+
+.home-sub {
+	margin-top: 0 !important;
+}
+
+.login-head {
+	width: 200px;
+	margin-bottom: 0px;
+	color: grey;
+	box-shadow: 0 5px 6px -6px grey;
+	margin-right: auto;
+	margin-left: auto;
+	padding-bottom: 10px;
+}
+
+.reg-container {
+	background-color: white !important;
+}
+</style>
+<script src="js/lib/jquery.min.js"></script>
+<script src="js/lib/angular.min.js"></script>
+<script src="js/lib/angular-route.js"></script>
+<script src="js/lib/angular-cookies.js"></script>
+<script src="js/lib/dir-pagination.js"></script>
+<script src="js/lib/bootstrap.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controller/register.js"></script>
+<!-- <script src="js/controller/userTableCtrl.js"></script> -->
+<!-- <script src="js/directives/userTable.js"></script> -->
+<script src="js/services/Auth.js"></script>
+</head>
+<body>
+
+	<div class="container" ng-class="log ? 'col-sm-12': 'reg-container'" style="margin-top: 5%;border-radius: 15px;">
+		<div class="row">
+			<div ng-include="'views/nav.html'"></div>
+		</div>
+		<ng-view></ng-view>
+	</div>
+</body>
+</html>

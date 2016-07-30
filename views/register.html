@@ -1,0 +1,49 @@
+<div class=" ">
+	<div class="panel panel-default home-sub" style="border: none !important;">
+		<div class=""></div>
+		<div class="panel-body">
+			<form role="form" name="myform" ng-submit="register()" novalidate>
+				<div class="row">
+					<div class="form-group col-sm-6">
+						<label for="firstname">First Name</label> <input type="text" class="form-control" name="firstname" id="firstname" ng-model="user.firstname"  ng-required="true">
+						<p ng-show="myform.firstname.$touched && myform.firstname.$invalid" class="text-danger">Enter a valid firstname</p>
+					</div>
+
+					<div class="form-group col-sm-6">
+						<label for="lastname">Last Name</label> <input type="text" class="form-control" name="lastname" id="lastname" ng-model="user.lastname"  ng-required="true">
+						<p ng-show="myform.lastname.$touched && myform.lastname.$invalid" class="text-danger">Enter a valid lastname</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-sm-6">
+						<label for="empno">Employee number</label> <input type="number" class="form-control" name="empno" id="empno" ng-model="user.empno"  ng-required="true">
+						<p ng-show="myform.empno.$touched && myform.empno.$invalid" class="text-danger">Enter a valid employee number</p>
+					</div>
+					<div class="form-group  col-sm-6">
+						<label for="location">Location</label> <input type="text" class="form-control" name="location" id="location" ng-model="user.location" ng-required="true">
+						<p ng-show="myform.location.$touched && myform.location.$invalid" class="text-danger">Enter a valid location</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-sm-6">
+						<label for="phonenumber">Phone Number</label> <input type="text" class="form-control" name="phonenumber" id="phonenumber" ng-model="user.phonenumber" 
+							ng-required="true">
+						<p ng-show="myform.phonenumber.$touched && myform.phonenumber.$invalid" class="text-danger">Enter a valid Phone Number</p>
+					</div>
+					<div class="form-group col-sm-6">
+						<label for="email">Email Adress</label> <input type="text" class="form-control" name="email" id="email" ng-model="user.email"  ng-required="true">
+						<p ng-show="myform.email.$touched && myform.email.$invalid" class="text-danger">Enter a valid email</p>
+					</div>
+				</div>
+				<div class="row">
+				<div class="form-group col-sm-12">
+					<button type="submit" ng-disabled="myform.$invalid" class="btn  pull-right" style="min-width: 80px;background-color:grey">Submit</button>
+				</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="">
+	<div ng-include="'views/userTable.html'"></div>
+	</div>
+</div>
